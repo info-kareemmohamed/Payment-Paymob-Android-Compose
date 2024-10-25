@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -20,6 +22,15 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        //To Load Public Key and Online Card Payment Method ID from local.properties file
+        val file = rootProject.file("local.properties")
+        val properties = Properties()
+        properties.load(file.inputStream())
+        buildConfigField("String", "Public_Key", properties.getProperty("Public_Key"))
+        buildConfigField("String", "Secret_Key", properties.getProperty("Secret_Key"))
+        buildConfigField("int", "Online_Card_Payment_Method_ID", properties.getProperty("Online_Card_Payment_Method_ID"))
+
+
     }
 
     buildTypes {
@@ -40,6 +51,9 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+        dataBinding = true
+
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -68,6 +82,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0-alpha01")
+
+
+    implementation("com.paymob.sdk:Paymob-SDK:1.3.0")
+
 
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
