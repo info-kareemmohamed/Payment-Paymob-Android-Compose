@@ -1,6 +1,14 @@
-<h1 align="center"> Payment-Paymob-Android-Compose </h1>
+<h1 align="center"> Paymob Integration in Android using the Mobile SDKs </h1>
 
 <p align="center"> 💰 Paymob Integration in Android using the new method, which is the Mobile SDKs to make it easier for developers to use Paymob functionalities in their applications after this project you can pay with visa or master card or wallets (Vodafone Cash, Orange Cash, Etisalat Cash) in your android app. </p>
+
+
+## Preview 📱
+
+
+[preview.webm](https://github.com/user-attachments/assets/652b53de-4547-4028-ab5a-42421a4e1565)
+
+
 
 
 ## Manual Installation
@@ -9,7 +17,7 @@ Reference: [Paymob integration mobile sdks v2](https://developers.paymob.com/egy
 
 ## Usage
 - Set Paymob credentials
-```bash
+```kotlin
      const val PUBLIC_KEY = "your_public_key_here"
      const val BASE_URL = "https://accept.paymob.com/"
      const val SECRET_KEY = "your_secret_key_here"
