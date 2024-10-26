@@ -22,10 +22,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        //To Load Public Key and Online Card Payment Method ID from local.properties file
-        val file = rootProject.file("local.properties")
-        val properties = Properties()
-        properties.load(file.inputStream())
+
+        // Load Public Key, Secret Key, and Payment Method ID from local.properties
+        val properties = Properties().apply {
+            load(rootProject.file("local.properties").inputStream())
+        }
         buildConfigField("String", "Public_Key", properties.getProperty("Public_Key"))
         buildConfigField("String", "Secret_Key", properties.getProperty("Secret_Key"))
         buildConfigField("int", "Online_Card_Payment_Method_ID", properties.getProperty("Online_Card_Payment_Method_ID"))
