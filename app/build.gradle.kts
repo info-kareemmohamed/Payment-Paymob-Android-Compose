@@ -30,6 +30,7 @@ android {
         buildConfigField("String", "Public_Key", properties.getProperty("Public_Key"))
         buildConfigField("String", "Secret_Key", properties.getProperty("Secret_Key"))
         buildConfigField("int", "Online_Card_Payment_Method_ID", properties.getProperty("Online_Card_Payment_Method_ID"))
+        buildConfigField("int", "Mobile_Wallet_Payment_Method_ID", properties.getProperty("Mobile_Wallet_Payment_Method_ID"))
 
 
     }
@@ -57,7 +58,7 @@ android {
 
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packaging {
         resources {
@@ -88,7 +89,7 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0-alpha01")
 
 
-    implementation("com.paymob.sdk:Paymob-SDK:1.3.0")
+    implementation("com.paymob.sdk:Paymob-SDK:1.5.7")
 
 
     implementation("com.google.dagger:hilt-android:2.51.1")
