@@ -3,14 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.paymob.sdk</groupId>
   <artifactId>Paymob-SDK</artifactId>
-  <version>1.3.0</version>
+  <version>1.5.7</version>
   <packaging>aar</packaging>
   <dependencies>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-android-extensions-runtime</artifactId>
-      <version>1.7.21</version>
-    </dependency>
     <dependency>
       <groupId>androidx.core</groupId>
       <artifactId>core-ktx</artifactId>
@@ -115,6 +110,11 @@
       <groupId>com.google.android.gms</groupId>
       <artifactId>play-services-wallet</artifactId>
       <version>19.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.mikhaellopez</groupId>
+      <artifactId>circularprogressbar</artifactId>
+      <version>3.1.0</version>
     </dependency>
   </dependencies>
 </project>
