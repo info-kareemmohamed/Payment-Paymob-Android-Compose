@@ -7,7 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.myapplication.data.Constants.PUBLIC_KEY
+import com.example.myapplication.BuildConfig.Public_Key
 import com.example.myapplication.presentation.theme.MyApplicationTheme
 import com.paymob.paymob_sdk.PaymobSdk
 import com.paymob.paymob_sdk.ui.PaymobSdkListener
@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity(), PaymobSdkListener {
         PaymobSdk.Builder(
             context = this,
             clientSecret = clientSecret,
-            publicKey = PUBLIC_KEY,
+            publicKey = Public_Key,
             paymobSdkListener = this
         )
             .build()
@@ -63,7 +63,7 @@ class MainActivity : ComponentActivity(), PaymobSdkListener {
         Log.d("PaymobSdkListener", "onPending")
     }
 
-    override fun onSuccess() {
+    override fun onSuccess(payResponse: HashMap<String, String?>) {
         Log.d("PaymobSdkListener", "onSuccess")
     }
 

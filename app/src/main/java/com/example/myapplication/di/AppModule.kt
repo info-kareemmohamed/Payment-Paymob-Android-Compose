@@ -1,6 +1,5 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.data.Constants.BASE_URL
 import com.example.myapplication.data.remote.PaymentService
 import com.example.myapplication.data.repository.PaymentRepositoryImpl
 import com.example.myapplication.domain.repository.PaymentRepository
@@ -21,7 +20,7 @@ object AppModule {
     @Provides
     fun providePaymentService(): PaymentService {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl("https://accept.paymob.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(PaymentService::class.java)
@@ -32,7 +31,6 @@ object AppModule {
     fun providePaymentRepository(api: PaymentService): PaymentRepository {
         return PaymentRepositoryImpl(api)
     }
-
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.myapplication.data.repository
 
-import com.example.myapplication.data.Constants.ONLINE_CARD_PAYMENT_METHOD_ID
+import com.example.myapplication.BuildConfig.Online_Card_Payment_Method_ID
+import com.example.myapplication.BuildConfig.Mobile_Wallet_Payment_Method_ID
 import com.example.myapplication.data.remote.PaymentService
 import com.example.myapplication.data.remote.dto.BillingData
 import com.example.myapplication.data.remote.dto.Customer
@@ -24,7 +25,7 @@ class PaymentRepositoryImpl @Inject constructor(private val api: PaymentService)
             PaymentRequest(
                 amount = amount * 100,// Multiply by 100 to handle amount in cents
                 currency = currency,
-                payment_methods = listOf(ONLINE_CARD_PAYMENT_METHOD_ID),//Add All Payment Methods ID you want to use
+                payment_methods = listOf(Online_Card_Payment_Method_ID,Mobile_Wallet_Payment_Method_ID),//Add All Payment Methods ID you want to use
                 items = listOf(Item("Item name 1", amount * 100, "Item description 1", 1)),
                 billing_data = BillingData(
                     apartment = "sympl",
